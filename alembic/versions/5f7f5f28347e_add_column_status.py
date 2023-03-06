@@ -17,10 +17,8 @@ depends_on = None
 
 
 def upgrade() -> None:
-    # sa.Column('status', sa.Integer(), nullable=False)
-    # op.add_column('account', sa.Column('last_transaction_date', sa.DateTime))
-    op.add_column('tmp', sa.Column('status', sa.Integer()))
+    op.add_column('analysis_sqlalchemy', sa.Column('status', sa.Integer()))
 
 
 def downgrade() -> None:
-    op.drop_column('tmp', 'status')
+    op.drop_column('analysis_sqlalchemy', 'status')
